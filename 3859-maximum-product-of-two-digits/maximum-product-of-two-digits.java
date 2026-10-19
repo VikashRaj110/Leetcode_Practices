@@ -15,7 +15,7 @@ class Solution {
 
             n /= 10;
         }
-
+       if (second == -1) return 0;
         return first * second;
     }
 }
