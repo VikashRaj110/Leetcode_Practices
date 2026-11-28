@@ -1,18 +1,28 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        if(s.length()!= t.length())
-        return false;
+        if(s.length()!= t.length()){
+            return false;
+        }
+        // Bruth force
+        char[] ch1 = s.toCharArray();
+        char[] ch2 = t.toCharArray();
 
-        int [] freq = new int[26];
+        Arrays.sort(ch1);
+        Arrays.sort(ch2);
+        return Arrays.equals(ch1,ch2);
 
-        for(char ch :s.toCharArray())
-             freq[ch-97]++;
-        for(char ch :t.toCharArray())
-             freq[ch-97]--;
+       // Frequency Array
+    //    int [] frequency = new int[26];
 
-         for(int val: freq){
-            if(val!=0) return false;
-         }    
-         return true;
+    //    for(char ch :s.toCharArray())
+    //           freq[ch-97]++;
+    //         for(char ch :t.toCharArray())
+    //          freq[ch-97]--;
+
+    //         for(int val: freq){
+    //         if(val!=0) return false;
+    //         }    
+    //        return true;      
     }
 }
+
